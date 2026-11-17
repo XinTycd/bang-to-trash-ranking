@@ -1,0 +1,12 @@
+config.json
+public/favicon.ico
+data/
+public/img/*
+!public/img/web/
+public/img/web/*
+!public/img/web/logo.svg
+*.zip
+*.sqlite*
+*.backup
+.env*
+.server.pid

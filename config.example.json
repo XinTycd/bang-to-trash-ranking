@@ -1,0 +1,12 @@
+{
+  "server": {
+    "port": 5980,
+    "trustProxy": false
+  },
+  "admin": {
+    "path": "/xintycd-admin",
+    "assetPath": "/xintycd-admin.js",
+    "key": "",
+    "allowedIps": []
+  }
+}

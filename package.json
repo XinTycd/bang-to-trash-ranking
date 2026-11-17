@@ -1,0 +1,27 @@
+{
+  "name": "bang-to-trash-ranking",
+  "version": "1.0.0",
+  "description": "从夯到拉锐评排行榜完整系统",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "restart": "powershell -ExecutionPolicy Bypass -File scripts/restart.ps1",
+    "test": "node --test",
+    "migrate:json": "node scripts/import-json-to-sqlite.js",
+    "start:admin": "node server.js --admin"
+  },
+  "keywords": [
+    "ranking",
+    "tier-list",
+    "xintycd"
+  ],
+  "author": "XinTycd",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.10.0"
+  }
+}

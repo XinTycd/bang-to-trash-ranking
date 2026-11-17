@@ -1,0 +1,15 @@
+node_modules/
+.env*
+!.env.example
+.server.pid
+config.json
+public/favicon.ico
+data/
+public/img/*
+!public/img/web/
+public/img/web/*
+!public/img/web/logo.svg
+*.zip
+*.sqlite*
+*.backup
+*.log

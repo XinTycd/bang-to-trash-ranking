@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>后台管理 · 从夯到拉锐评排行榜</title>
+    <link rel="icon" href="/img/web/logo.svg?v=9" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <a class="brand" href="__ADMIN_PAGE_HREF__" aria-label="后台首页">
+        <span class="brand-mark">管</span>
+        <span>
+          <strong>锐评排行榜后台</strong>
+          <small>XinTycd Admin</small>
+        </span>
+      </a>
+      <nav class="top-actions">
+        <a class="secondary-button nav-link-button" href="./index.html">前台</a>
+        <button class="icon-button" id="adminRefreshButton" type="button" title="刷新">
+          <span aria-hidden="true">↻</span>
+        </button>
+      </nav>
+    </header>
+
+    <main class="admin-view">
+      <section class="admin-dashboard-head">
+        <div class="admin-hero">
+          <p class="eyebrow">System Console</p>
+          <h1>系统后台</h1>
+        </div>
+
+        <section class="admin-stats" aria-label="系统概览">
+          <article class="stat-card">
+            <span>主题</span>
+            <strong id="statTopics">0</strong>
+          </article>
+          <article class="stat-card">
+            <span>置顶</span>
+            <strong id="statPublic">0</strong>
+          </article>
+          <article class="stat-card">
+            <span>评价项</span>
+            <strong id="statItems">0</strong>
+          </article>
+          <article class="stat-card">
+            <span>结果</span>
+            <strong id="statResponses">0</strong>
+          </article>
+        </section>
+      </section>
+
+      <section class="admin-category-manager" aria-labelledby="adminCategoryTitle">
+        <div class="section-heading">
+          <h2 id="adminCategoryTitle">标签管理</h2>
+          <span class="counter" id="adminCategoryCounter">0</span>
+        </div>
+        <form class="admin-category-form" id="adminCategoryForm">
+          <label>
+            <span>添加标签</span>
+            <input id="adminCategoryInput" type="text" maxlength="24" placeholder="例如：运动" />
+          </label>
+          <button class="primary-button" type="submit">添加标签</button>
+        </form>
+        <div class="admin-category-list" id="adminCategoryList"></div>
+        <div class="admin-items-save-row">
+          <button class="primary-button" id="adminSaveCategoriesButton" type="button">保存标签顺序</button>
+        </div>
+      </section>
+
+      <section class="admin-layout">
+        <aside class="topic-list-panel admin-topic-panel" aria-labelledby="adminTopicTitle">
+          <div class="section-heading">
+            <h2 id="adminTopicTitle">主题管理</h2>
+            <span class="counter" id="adminTopicCounter">0</span>
+          </div>
+          <div class="topic-list" id="adminTopicList"></div>
+        </aside>
+
+        <section class="admin-detail-panel" id="adminDetailPanel">
+          <div class="empty-state">选择一个主题</div>
+        </section>
+      </section>
+    </main>
+
+    <dialog class="share-dialog" id="adminForkDialog">
+      <form id="adminForkForm">
+        <div class="section-heading">
+          <h2>新建分支</h2>
+          <button class="icon-button" id="adminCloseForkButton" title="关闭" type="button">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <input id="adminForkSourceId" type="hidden" />
+        <label>
+          <span>分支标题</span>
+          <input id="adminForkTitle" type="text" maxlength="36" required />
+        </label>
+        <fieldset class="visibility-group">
+          <legend>公开状态</legend>
+          <label>
+            <input type="radio" name="adminForkVisibility" value="public" checked />
+            <span>公开</span>
+          </label>
+          <label>
+            <input type="radio" name="adminForkVisibility" value="private" />
+            <span>私有</span>
+          </label>
+        </fieldset>
+        <label id="adminForkPasswordField" hidden>
+          <span>分享密码</span>
+          <input id="adminForkPassword" type="password" maxlength="32" placeholder="私有分支访问密码" />
+        </label>
+        <button class="primary-button" type="submit">创建分支</button>
+      </form>
+    </dialog>
+
+    <script src="__ADMIN_ASSET_PATH__"></script>
+  </body>
+</html>
